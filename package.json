@@ -1,0 +1,40 @@
+{
+  "name": "gulp-fixtures2js",
+  "version": "0.0.0",
+  "description": "Convert your fixtures into a JS object for use in tests.",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jussi-kalliokoski/gulp-fixtures2js"
+  },
+  "keywords": [
+    "gulpplugin",
+    "fixture",
+    "testing"
+  ],
+  "author": {
+    "name": "Jussi Kalliokoski",
+    "email": "jussi.kalliokoski@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jussi-kalliokoski/gulp-fixtures2js/issues"
+  },
+  "homepage": "https://github.com/jussi-kalliokoski/gulp-fixtures2js",
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-nodeunit": "0.0.5",
+    "glob": "^3.2.9"
+  },
+  "dependencies": {
+    "fixtures2js": "0.0.0",
+    "through": "^2.3.4",
+    "gulp-util": "^2.2.14",
+    "lodash": "^2.4.1"
+  }
+}
