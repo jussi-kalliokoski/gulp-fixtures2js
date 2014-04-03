@@ -69,9 +69,9 @@ Which will generate the following result:
 
 ```javascript
 processFixtures({
-    "fixtures/one-fixture-file.txt": "The contents of the fixture file here",
-    "fixtures/other-fixture-file.txt": "The contents of another fixture file here",
-    "fixtures/stuff.json": {
+    "one-fixture-file.txt": "The contents of the fixture file here",
+    "other-fixture-file.txt": "The contents of another fixture file here",
+    "stuff.json": {
         "foo": "bar"
     }
 });
