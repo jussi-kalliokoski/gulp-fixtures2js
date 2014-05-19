@@ -30,9 +30,12 @@
   "homepage": "https://github.com/jussi-kalliokoski/gulp-fixtures2js",
   "devDependencies": {
     "gulp": "^3.6.0",
-    "gulp-nodeunit": "0.0.5",
     "glob": "^3.2.9",
-    "coveralls": "^2.10.0"
+    "coveralls": "^2.10.0",
+    "chai": "^1.9.1",
+    "chai-gulp-helpers": "0.0.2",
+    "gulp-istanbul": "^0.2.0",
+    "gulp-mocha": "^0.4.1"
   },
   "dependencies": {
     "fixtures2js": "0.0.0",
