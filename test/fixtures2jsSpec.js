@@ -4,6 +4,7 @@ var gulp = require("gulp");
 var fixtures2js = require("../index.js");
 var chai = require("chai");
 var chaiGulpHelpers = require("chai-gulp-helpers");
+var gutil = require("gulp-util");
 
 chai.use(chaiGulpHelpers);
 chai.should();
@@ -38,5 +39,9 @@ describe("fixtures2js", function () {
                 }
             }));
         return actual.should.produce.sameFilesAs(expected);
+    });
+
+    it("should throw an error if the filename option is missing", function () {
+        fixtures2js.should.throw("Missing `fileName` option for gulp-fixtures2js");
     });
 });
