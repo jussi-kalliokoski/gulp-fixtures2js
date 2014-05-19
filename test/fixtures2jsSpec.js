@@ -76,4 +76,14 @@ describe("fixtures2js", function () {
         var actual = gulp.src("./test/fixtures/test_ignore_null/*").pipe(processor);
         return actual.should.produce.sameFilesAs(expected);
     });
+
+    it("should not produce anything if no fixtures are given", function () {
+        var expected = through.obj();
+        var source = through.obj();
+        var stream = fixtures2js("foo.js");
+        source.pipe(stream);
+        stream.emit("end");
+        source.emit("end");
+        stream.should.produce.sameFilesAs(expected);
+    });
 });
