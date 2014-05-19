@@ -5,6 +5,8 @@ var fixtures2js = require("../index.js");
 var chai = require("chai");
 var chaiGulpHelpers = require("chai-gulp-helpers");
 var gutil = require("gulp-util");
+var through = require("through2");
+var File = require("vinyl");
 
 chai.use(chaiGulpHelpers);
 chai.should();
@@ -43,5 +45,15 @@ describe("fixtures2js", function () {
 
     it("should throw an error if the filename option is missing", function () {
         fixtures2js.should.throw("Missing `fileName` option for gulp-fixtures2js");
+    });
+
+    it("should throw an error if streaming is attempted", function () {
+        var stream = fixtures2js("foo.js");
+        void function () {
+            stream.write(new File({
+                path: "/meow",
+                contents: through.obj()
+            }));
+        }.should.throw("Streaming not supported");
     });
 });

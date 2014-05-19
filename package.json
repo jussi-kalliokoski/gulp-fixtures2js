@@ -35,7 +35,9 @@
     "chai": "^1.9.1",
     "chai-gulp-helpers": "0.0.2",
     "gulp-istanbul": "^0.2.0",
-    "gulp-mocha": "^0.4.1"
+    "gulp-mocha": "^0.4.1",
+    "vinyl": "^0.2.3",
+    "through2": "^0.4.1"
   },
   "dependencies": {
     "fixtures2js": "0.0.0",
