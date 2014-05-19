@@ -56,4 +56,24 @@ describe("fixtures2js", function () {
             }));
         }.should.throw("Streaming not supported");
     });
+
+    it("should ignore null files", function () {
+        var processor = fixtures2js("test_ignore_null.js", {
+            postProcessors: {
+                "**/*.txt": "default",
+                "**/*.wav": "arraybuffer",
+                "**/*.json": "json",
+                "**/*": "base64"
+            }
+        });
+
+        processor.write(new File({
+            path: "/meow",
+            contents: null
+        }));
+
+        var expected = gulp.src("./test/expected/test_ignore_null.js");
+        var actual = gulp.src("./test/fixtures/test_ignore_null/*").pipe(processor);
+        return actual.should.produce.sameFilesAs(expected);
+    });
 });
